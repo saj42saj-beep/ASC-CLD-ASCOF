@@ -1,4 +1,4 @@
-PREREQUESITES to setup code in your environment
+PREREQUESITES to setup code in your environment.
 The code below is from https://github.com/DataS-DHSC/ASC-CLD-LA-Dashboard
 It works well but needs some tweaking to run it locally.
 1. replace schemas to your local database.
