@@ -6,3 +6,9 @@ It will validate fields.
 
 
 It will create necessary TSQL to generate ASCOF measure figures so LAs know their results prior to submission.
+
+
+Order of activities
+  1 - Stored_procedures
+  2 - Main_tables
+  3 - ASCOF_measures
