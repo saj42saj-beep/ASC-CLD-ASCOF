@@ -1,4 +1,8 @@
 This repo is aimed at LAs who already produce and submit CLD data.
 
-It will validate fields
+
+It will validate fields.
   1. drop down fields and confirm all values map against the standard.
+
+
+It will create necessary TSQL to generate ASCOF measure figures so LAs know their results prior to submission.
