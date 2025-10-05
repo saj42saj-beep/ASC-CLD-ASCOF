@@ -9,8 +9,8 @@ https://www.ardengemcsu.nhs.uk/media/4362/cld-data-specification_release_2_mappi
 
 It will create necessary TSQL to generate ASCOF measure figures so LAs know their results prior to submission.
 
-
 Order of activities
-  1 - Stored_procedures
-  2 - Main_tables
-  3 - ASCOF_measures
+  1 - Prepare local CLD dataset
+  2 - Stored_procedures
+  3 - Main_tables
+  4 - ASCOF_measures
