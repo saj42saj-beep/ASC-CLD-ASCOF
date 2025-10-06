@@ -16,12 +16,15 @@
 -- ie those that are marked Mandatory* ie not mandatory across all event types.
 -- includes logic to ensure validation against capitalisation.
 
+-- includes logic to report on "Unit cost" and "Planned units per week" where the value will not cast to numeric(18,2)
+-- excludes blank as try_cast covers that (in the view)
+
 -- ** TO DO ** - provide option to return individual Event References with the wrong value
 -- report better where blanks exist on not mandatory fields eg Method of Review for Requests, Assessments and Services
 
 
 -- exec [CLD].[ValidateDefinedListValues]
-alter procedure
+create procedure
 [CLD].[ValidateDefinedListValues] as
 
 begin
@@ -82,6 +85,32 @@ begin
 
 	CLOSE column_cursor;
 	DEALLOCATE column_cursor;
+
+	-- now report if Unit cost will not cast to numeric (18,2)
+	Insert into #InvalidCounts
+	select 'Unit cost' as [Field],
+	[Event Type],
+	[Unit cost], 
+	count(*) 
+	from
+	cld.RecordLevelData
+	where try_cast([Unit cost] as NUMERIC(18, 2)) is null 
+	and [Unit cost] is not null
+	and [Unit cost] <> ''
+	group by [Event Type],[Unit cost]
+
+	-- now report if Planned units per week will not cast to numeric (18,2)
+	Insert into #InvalidCounts
+	select 'Planned units per week' as [Field],
+	[Event Type],
+	[Planned units per week], 
+	count(*) 
+	from
+	cld.RecordLevelData
+	where try_cast([Planned units per week] as NUMERIC(18, 2)) is null 
+	and [Planned units per week] is not null
+	and [Planned units per week] <> ''
+	group by [Event Type],[Planned units per week]
 
 	select * from #InvalidCounts;
 

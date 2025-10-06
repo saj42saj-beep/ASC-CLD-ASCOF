@@ -56,9 +56,9 @@ SELECT
     ,[Review Reason]			[Review_Reason]
     ,[Review Outcomes Achieved]			[Review_Outcomes_Achieved]
     ,[Method of Review]			[Method_of_Review]
-    ,[Unit Cost]			[Unit_Cost]
+    ,try_cast([Unit Cost] as numeric(18,2))			[Unit_Cost]
     ,[Cost Frequency (Unit Type)]			[Cost_Frequency_Unit_Type]
-    ,[Planned units per week]			[Planned_Units_Per_Week]
+    ,try_cast([Planned units per week] as numeric(18,2))			[Planned_Units_Per_Week]
     ,ROW_NUMBER() over (order by [Submission], [Event Reference])			Der_Unique_Record_ID
     ,[Submission]			[Submission]
 	,cast(getdate() as date) ImportDate
