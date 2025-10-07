@@ -14,13 +14,14 @@
 
 -- The SP currently reports on empty values in Defined list.
 -- ie those that are marked Mandatory* ie not mandatory across all event types.
--- includes logic to ensure validation against capitalisation.
+-- includes logic to ensure capitalisation validation - ie recent capitalisation only changes.
 
 -- includes logic to report on "Unit cost" and "Planned units per week" where the value will not cast to numeric(18,2)
--- excludes blank as try_cast covers that (in the view)
+-- excludes blank as try_cast covers that in the view.
 
--- ** TO DO ** - provide option to return individual Event References with the wrong value
--- report better where blanks exist on not mandatory fields eg Method of Review for Requests, Assessments and Services
+-- ** TO DO **
+-- Provide option to return individual Event References with the wrong value, rather than just counts by incorrect value.
+-- Report better where blanks exist on mandatory* fields eg Method of Review acceptable for blanks in Requests, Assessments and Services
 
 
 -- exec [CLD].[ValidateDefinedListValues]

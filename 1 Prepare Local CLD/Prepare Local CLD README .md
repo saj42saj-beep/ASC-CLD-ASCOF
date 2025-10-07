@@ -1,7 +1,10 @@
-
 **Validation**
-Download and create local table which maps allowable values per field.
+Stored procedure that will validate CLD data.
+1. Defined list values are correct.
+2. Unit Cost and Planned units per week are numeric 2dp.
+3. **TO DO** add extra validation logic as needed. TBD.
 
+Download and create local table which maps allowable values per field.
 Fields in the table are expected to be *with spaces* as per the specification **and** mapping file.
 
 ie
@@ -16,10 +19,9 @@ Includes logic to validate "Unit cost" and "Planned units per week" where the va
 excludes blank as try_cast covers that (in the view)
 
 
-**VIEW**
-This code expects an object **CLD_R1_Raw** which is the CLD field spec plus a number of extra columns; populated from the CLD columns.
+**CLD_R1_Raw**   ie  **VIEW**
+The code expects an object **CLD_R1_Raw** which is the CLD fields plus a number of extra columns; populated from the CLD columns so a VIEW works well.
 
 
-
-
-
+**REF_ objects**
+Script to generate appropriate supporting REF_ objects.
