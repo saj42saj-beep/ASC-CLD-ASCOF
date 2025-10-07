@@ -12,7 +12,7 @@ As at 7th October no changes have been made to core files in
 It contains necessary TSQL to generate ASCOF measure figures so LAs can validate and know their results prior to submission.
 
 Order of activities
-  1 - Prepare local CLD dataset
-  2 - Stored_procedures
-  3 - Main_tables
-  4 - ASCOF_measures
+  1. Prepare local CLD dataset
+  2. Stored_procedures
+  3. Main_tables
+  4. ASCOF_measures
